@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinHealth Pro | AI Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">FinHealth<span class="highlight">.ai</span></div>
+            <p>Advanced Financial Health & Personality Engine</p>
+        </header>
+
+        <form id="finForm">
+            <div class="form-section">
+                <h3>💰 Income Sources</h3>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>Self Income (Monthly)</label>
+                        <input type="number" name="income_self" placeholder="e.g. 80000" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Spouse Income (Monthly)</label>
+                        <input type="number" name="income_spouse" placeholder="e.g. 50000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🏠 Fixed Expenses (Needs)</h3>
+                <div class="grid-3">
+                    <div class="input-group"><label>Rent / Maintenance</label><input type="number" name="fix_rent"></div>
+                    <div class="input-group"><label>Home Loan EMI</label><input type="number" name="fix_home_emi"></div>
+                    <div class="input-group"><label>Other EMIs (Car/Personal)</label><input type="number" name="fix_other_emi"></div>
+                    <div class="input-group"><label>Food & Groceries</label><input type="number" name="fix_food"></div>
+                    <div class="input-group"><label>Utilities (Elec/WiFi)</label><input type="number" name="fix_utils"></div>
+                    <div class="input-group"><label>Transport / Fuel</label><input type="number" name="fix_transport"></div>
+                    <div class="input-group"><label>Regular Medical</label><input type="number" name="fix_medical"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🛍️ Variable Expenses (Wants)</h3>
+                <div class="grid-3">
+                    <div class="input-group"><label>Subscriptions (OTT)</label><input type="number" name="var_subs"></div>
+                    <div class="input-group"><label>Entertainment / Dining</label><input type="number" name="var_entertainment"></div>
+                    <div class="input-group"><label>Lifestyle / Shopping</label><input type="number" name="var_lifestyle"></div>
+                    <div class="input-group"><label>Travel / Vacations</label><input type="number" name="var_travel"></div>
+                    <div class="input-group"><label>Miscellaneous</label><input type="number" name="var_misc"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🛡️ Assets & Mindset</h3>
+                <div class="grid-2">
+                    <div class="input-group full-width">
+                        <label>Total Emergency Fund (Cash)</label>
+                        <input type="number" name="asset_fund" placeholder="Total savings balance">
+                    </div>
+                    <div class="input-group">
+                        <label>Investment Risk Appetite</label>
+                        <select name="mindset_risk">
+                            <option value="low">Conservative (Safe)</option>
+                            <option value="med">Moderate (Balanced)</option>
+                            <option value="high">Aggressive (High Growth)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Health Insurance?</label>
+                        <select name="prot_health">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Term Life Insurance?</label>
+                        <select name="prot_life">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <button type="submit" id="analyzeBtn" class="btn-primary">
+                    <span class="btn-text">Analyze My Finances</span>
+                    <div class="loader" id="btnLoader"></div>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

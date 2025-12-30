@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinHealth Pro | Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container" id="reportContent">
+        <header style="margin-bottom: 20px;">
+            <div class="logo">Analysis<span class="highlight">Report</span></div>
+            <a href="index.html" class="no-print" style="color: var(--primary); text-decoration: none; font-size: 0.9rem;">← Start New Analysis</a>
+        </header>
+
+        <div id="alertContainer" class="alert-grid"></div>
+
+        <div class="dashboard-grid">
+            <div class="score-card">
+                <div class="score-ring" id="scoreRing">
+                    <div class="score-inner" id="scoreNum">--</div>
+                </div>
+                <h2 style="color: white; margin:0;">Health Score</h2>
+                <p style="margin-top: 5px; color: #94a3b8;">Calculated from 15 data points</p>
+            </div>
+
+            <div class="personality-card">
+                <div class="personality-badge">Your Archetype</div>
+                <div class="personality-title" id="persTitle">Analyzing...</div>
+                <p id="persDesc" style="color: #94a3b8;">Determining your behavior...</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <h3>📊 Your Spending DNA</h3>
+            <div class="progress-container">
+                <div id="barNeeds" class="progress-segment color-needs"></div>
+                <div id="barWants" class="progress-segment color-wants"></div>
+                <div id="barSavings" class="progress-segment color-savings"></div>
+            </div>
+             <div class="legend">
+  <span id="legendNeeds">
+    <span class="dot color-needs"></span> Needs – <strong>0%</strong>
+  </span>
+  <span id="legendWants">
+    <span class="dot color-wants"></span> Wants – <strong>0%</strong>
+  </span>
+  <span id="legendSavings">
+    <span class="dot color-savings"></span> Savings – <strong>0%</strong>
+  </span>
+</div>
+
+        </div>
+
+        <div class="feature-box">
+            <h3>⚖️ Ideal vs You</h3>
+            <table class="benchmark-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Ideal</th>
+                        <th>You</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="benchmarkBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="feature-box target-box" id="targetBox">
+            <h3>🎯 Next Level Target</h3>
+            <p id="targetText">Analyzing gap...</p>
+        </div>
+
+        <div class="ai-split">
+            <div class="ai-box">
+                <h3>🔍 SWOT Analysis</h3>
+                <div id="swotContainer" class="ai-content">
+                    <p>Loading deep analysis...</p>
+                </div>
+            </div>
+
+            <div class="ai-box" style="border-top: 4px solid var(--accent);">
+                <h3>🚀 Immediate Actions</h3>
+                <div id="actionContainer" class="ai-content">
+                    <p>Generating custom strategy...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-area no-print" style="margin-top: 30px;">
+            <button class="btn-primary" onclick="downloadPDF()">⬇️ Download Financial Report</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
