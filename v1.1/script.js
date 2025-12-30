@@ -1,5 +1,5 @@
 // ================= CONFIGURATION =================
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "YOUR_API_KEY"; // Remember to insert your key here
 
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
@@ -167,7 +167,7 @@ function generateAlerts(d) {
 
   if (c.innerHTML === "")
     c.innerHTML =
-      <div class="alert-card alert-success">No critical financial risks detected</div>;
+      `<div class="alert-card alert-success">No critical financial risks detected</div>`;
 }
 
 // ================= SPENDING DNA =================
@@ -182,16 +182,16 @@ function generateVisualBar(d) {
   const s =
     total > 0 ? (Math.max(0, f.savings) / total) * 100 : 0;
 
-  document.getElementById("barNeeds").style.width = ${n}%;
-  document.getElementById("barWants").style.width = ${w}%;
-  document.getElementById("barSavings").style.width = ${s}%;
+  document.getElementById("barNeeds").style.width = `${n}%`;
+  document.getElementById("barWants").style.width = `${w}%`;
+  document.getElementById("barSavings").style.width = `${s}%`;
 
   document.querySelector("#legendNeeds strong").textContent =
-    ${Math.round(n)}%;
+    `${Math.round(n)}%`;
   document.querySelector("#legendWants strong").textContent =
-    ${Math.round(w)}%;
+    `${Math.round(w)}%`;
   document.querySelector("#legendSavings strong").textContent =
-    ${Math.round(s)}%;
+    `${Math.round(s)}%`;
 }
 
 // ================= BENCHMARKS =================
@@ -309,7 +309,7 @@ function detectPersonality(d, score) {
 // ================= AI =================
 async function findFlashModel() {
   const res = await fetch(
-    https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}
+    `https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`
   );
   const json = await res.json();
   const m = json.models.find((x) => x.name.includes("flash"));
@@ -355,7 +355,7 @@ Score ${health.score}/100
 `;
 
   const res = await fetch(
-    https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY},
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -392,7 +392,7 @@ function updateScoreRing(score) {
   const ring = document.getElementById("scoreRing");
   const color =
     score > 75 ? "#10b981" : score > 50 ? "#f59e0b" : "#ef4444";
-  ring.style.background = conic-gradient(${color} ${score}%, #1f2937 0%);
+  ring.style.background = `conic-gradient(${color} ${score}%, #1f2937 0%)`;
 }
 
 function animateValue(el, start, end, duration) {
